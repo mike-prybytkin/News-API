@@ -2,8 +2,10 @@ import './news.css';
 
 class News {
     draw(data) {
+        //console.log(data);
         const news = data.length >= 10 ? data.filter((_item, idx) => idx < 10) : data;
-
+        //console.log(news);
+        // console.log(data[0].source.name);
         const fragment = document.createDocumentFragment();
         const newsItemTemp = document.querySelector('#newsItemTemp');
 
