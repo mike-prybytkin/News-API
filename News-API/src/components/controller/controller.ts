@@ -1,5 +1,4 @@
 import AppLoader from './appLoader';
-//import { Callback } from '../../types/index.js';
 
 class AppController extends AppLoader {
     getSources<U>(callback: (data: U) => void) {

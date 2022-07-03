@@ -13,15 +13,14 @@ export interface IResponseObject {
 
 export interface IEndpointSources {
     status: string;
-    sources: ISourseExtended[];
+    sources: ISourсeExtended[];
 }
 
 export interface ISource {
     id: string;
     name: string;
 }
-
-export interface ISourseExtended extends ISource {
+export interface ISourсeExtended extends ISource {
     description: string;
     url: string;
     category: string;
