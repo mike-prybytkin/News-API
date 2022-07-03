@@ -9,8 +9,6 @@ export interface IResponseObject {
     statusText: string;
 }
 
-//export type Callback<T> = (data: T) => void;
-
 export interface IEndpointSources {
     status: string;
     sources: ISourсeExtended[];
@@ -20,6 +18,7 @@ export interface ISource {
     id: string;
     name: string;
 }
+
 export interface ISourсeExtended extends ISource {
     description: string;
     url: string;
@@ -28,10 +27,24 @@ export interface ISourсeExtended extends ISource {
     country: string;
 }
 
-//     id: string;
-//     name: string;
-//     description: string;
-//     url: string;
-//     category: string;
-//     language: string;
-//     country: string;
+export interface IArticle {
+    source: ISource;
+    author: string;
+    title: string;
+    description: string;
+    url: string;
+    urlToImage: string;
+    publishedAt: string;
+    content: string;
+}
+
+export interface IItemSourse {
+    id: string;
+    name: string;
+}
+
+export interface IEndpointEverything {
+    status: string;
+    totalResults: number;
+    articles: IArticle[];
+}

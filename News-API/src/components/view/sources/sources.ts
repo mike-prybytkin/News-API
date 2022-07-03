@@ -15,7 +15,7 @@ class Sources {
             fragment.append(sourceClone);
         });
 
-        (<HTMLElement>document.querySelector('.sources')).append(fragment);
+        (document.querySelector('.sources') as HTMLElement).append(fragment);
     }
 }
 
