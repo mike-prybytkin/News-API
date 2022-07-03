@@ -14,6 +14,12 @@ export interface IEndpointSources {
     sources: ISourсeExtended[];
 }
 
+export interface IEndpointEverything {
+    status: string;
+    totalResults: number;
+    articles: IArticle[];
+}
+
 export interface ISource {
     id: string;
     name: string;
