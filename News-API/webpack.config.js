@@ -9,9 +9,9 @@ const baseConfig = {
     mode: 'development',
     module: {
         rules: [
-            { 
-                test: /\.ts$/i, 
-                use: 'ts-loader' 
+            {
+                test: /\.ts$/i,
+                use: 'ts-loader',
             },
             {
                 test: /\.css$/i,
@@ -32,7 +32,7 @@ const baseConfig = {
             filename: 'index.html',
         }),
         new CleanWebpackPlugin(),
-        new EslingPlugin({ extensions: 'ts' })
+        new EslingPlugin({ extensions: 'ts' }),
     ],
 };
 

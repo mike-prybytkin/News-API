@@ -18,25 +18,52 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    column-gap: 1%;
+    border: 2px solid #30c5ff;
+    border-radius: 10px;
 }
 
 footer {
-    height: 100px;
     display: flex;
+    height: 60px;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
+
+footer div {
+    margin: 0 2% 0 2%;
+    font-size: 20px;
+    color: #444;
+}
+
+footer span a {
+    color: #444;
+    transition-duration: 0.3s;
+}
+
+footer span a:hover {
+    color: #555;
+}
+  
+.school-logo {
+    height: 40px;
+}
+
 footer .copyright {
     font-size: 14px;
     color: #333;
     text-align: center;
 }
+
 footer .copyright a {
     color: #444;
+    transition-duration: 0.3s;
 }
+
 footer .copyright a:hover {
     color: #555;
 }
+
 footer .copyright:before {
     content: '©';
 }
