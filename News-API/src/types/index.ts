@@ -1,31 +1,18 @@
-export interface ILoaderOptions {
+export interface LoaderOptions {
     apiKey: string;
 }
 
-export interface IResponseObject {
+export interface EndpointSources {
     status: string;
-    sources: string[];
-    ok: boolean;
-    statusText: string;
+    sources: InputDataSource[];
 }
 
-export interface IEndpointSources {
-    status: string;
-    sources: ISourсeExtended[];
-}
-
-export interface IEndpointEverything {
-    status: string;
-    totalResults: number;
-    articles: IArticle[];
-}
-
-export interface ISource {
+export interface Source {
     id: string;
     name: string;
 }
 
-export interface ISourсeExtended extends ISource {
+export interface InputDataSource extends Source {
     description: string;
     url: string;
     category: string;
@@ -33,8 +20,8 @@ export interface ISourсeExtended extends ISource {
     country: string;
 }
 
-export interface IArticle {
-    source: ISource;
+export interface Article {
+    source: Source;
     author: string;
     title: string;
     description: string;
@@ -44,13 +31,8 @@ export interface IArticle {
     content: string;
 }
 
-export interface IItemSourse {
-    id: string;
-    name: string;
-}
-
-export interface IEndpointEverything {
+export interface EndpointEverything {
     status: string;
     totalResults: number;
-    articles: IArticle[];
+    articles: Article[];
 }

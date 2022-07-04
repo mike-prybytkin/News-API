@@ -1,9 +1,9 @@
-import { ILoaderOptions } from '../../types/index.js';
+import { LoaderOptions } from '../../types/index.js';
 
 class Loader {
     private baseLink: string;
-    private options: ILoaderOptions;
-    constructor(baseLink: string, options: ILoaderOptions) {
+    private options: LoaderOptions;
+    constructor(baseLink: string, options: LoaderOptions) {
         this.baseLink = baseLink;
         this.options = options;
     }
@@ -25,7 +25,7 @@ class Loader {
         return res;
     }
 
-    makeUrl(options: ILoaderOptions | object, endpoint: string): string {
+    makeUrl(options: LoaderOptions | object, endpoint: string): string {
         const urlOptions: { [index: string]: string } = { ...this.options, ...options };
         let url = `${this.baseLink}${endpoint}?`;
 

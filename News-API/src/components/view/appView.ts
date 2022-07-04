@@ -1,7 +1,7 @@
 import News from './news/news';
 import Sources from './sources/sources';
-import { IEndpointSources } from '../../types/index';
-import { IEndpointEverything } from '../../types/index';
+import { EndpointSources } from '../../types/index';
+import { EndpointEverything } from '../../types/index';
 
 export class AppView {
     private news: News;
@@ -11,12 +11,12 @@ export class AppView {
         this.sources = new Sources();
     }
 
-    drawNews(data: IEndpointEverything) {
+    drawNews(data: EndpointEverything) {
         const values = data?.articles ? data?.articles : [];
         this.news.draw(values);
     }
 
-    drawSources(data: IEndpointSources) {
+    drawSources(data: EndpointSources) {
         const values = data?.sources ? data?.sources : [];
         this.sources.draw(values);
     }
