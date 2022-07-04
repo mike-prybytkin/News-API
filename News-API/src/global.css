@@ -47,6 +47,12 @@ footer span a:hover {
   
 .school-logo {
     height: 40px;
+    transition-duration: 0.3s;
+    filter: invert(24%) sepia(30%) saturate(14%) hue-rotate(351deg) brightness(89%) contrast(86%);
+}
+
+.school-logo:hover {
+    filter: invert(0%) sepia(100%) saturate(7459%) hue-rotate(321deg) brightness(85%) contrast(109%);
 }
 
 footer .copyright {
