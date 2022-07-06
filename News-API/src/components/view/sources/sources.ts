@@ -1,7 +1,7 @@
 import './sources.css';
-import { InputDataSource } from '../../../types/index';
+import { SourcesInterface, InputDataSource } from '../../../types/index';
 
-class Sources {
+class Sources implements SourcesInterface {
     draw(data: InputDataSource[]): void {
         const fragment = document.createDocumentFragment() as DocumentFragment;
         const sourceItemTemp = document.querySelector('#sourceItemTemp') as HTMLTemplateElement;

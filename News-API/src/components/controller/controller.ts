@@ -1,8 +1,9 @@
 import AppLoader from './appLoader';
+import { AppControllerInterface } from '../../types/index';
 
-class AppController extends AppLoader {
-    getSources<U>(callback: (data: U) => void) {
-        super.getResp(
+class AppController extends AppLoader implements AppControllerInterface {
+    getSources<T>(callback: (data: T) => void) {
+        super.getResponse(
             {
                 endpoint: 'sources',
             },
@@ -19,7 +20,7 @@ class AppController extends AppLoader {
                 const sourceId = target.getAttribute('data-source-id') as string;
                 if (newsContainer.getAttribute('data-source') !== sourceId) {
                     newsContainer.setAttribute('data-source', sourceId);
-                    super.getResp(
+                    super.getResponse(
                         {
                             endpoint: 'everything',
                             options: {

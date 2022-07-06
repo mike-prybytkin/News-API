@@ -1,32 +1,27 @@
-import { LoaderOptions } from '../../types/index.js';
+import { LoaderInterface, LoaderOptions, GetResponseInput } from '../../types/index';
 
-class Loader {
-    private baseLink: string;
-    private options: LoaderOptions;
-    constructor(baseLink: string, options: LoaderOptions) {
+class Loader implements LoaderInterface {
+    constructor(private baseLink: string, private options: LoaderOptions) {
         this.baseLink = baseLink;
         this.options = options;
     }
 
-    getResp<T>(
-        { endpoint, options = {} }: { endpoint: string; options?: { sources?: string } },
-        callback: (data: T) => void
-    ): void {
+    getResponse<T>({ endpoint, options = {} }: GetResponseInput, callback: (data: T) => void): void {
         this.load('GET', endpoint, callback, options);
     }
 
-    errorHandler(res: Response): Response {
-        if (!res.ok) {
-            if (res.status === 401 || res.status === 404)
-                console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
-            throw Error(res.statusText);
+    private errorHandler(response: Response): Response {
+        if (!response.ok) {
+            if (response.status === 401 || response.status === 404)
+                console.log(`Sorry, but there is ${response.status} error: ${response.statusText}`);
+            throw Error(response.statusText);
         }
 
-        return res;
+        return response;
     }
 
     makeUrl(options: LoaderOptions | object, endpoint: string): string {
-        const urlOptions: { [index: string]: string } = { ...this.options, ...options };
+        const urlOptions: Record<string, string> = { ...this.options, ...options };
         let url = `${this.baseLink}${endpoint}?`;
 
         Object.keys(urlOptions).forEach((key) => {
@@ -36,7 +31,7 @@ class Loader {
         return url.slice(0, -1);
     }
 
-    load<T>(method: string, endpoint: string, callback: (data: T) => void, options = {}) {
+    load<T>(method: string, endpoint: string, callback: (data: T) => void, options: object = {}) {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
             .then((res) => res.json())
