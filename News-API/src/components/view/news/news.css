@@ -3,10 +3,10 @@
     width: 100%;
     flex-wrap: wrap;
     justify-content: space-around;
-    height: 80vh;
     overflow-y: scroll;
     scrollbar-color: #d4aa70 #e4e4e4;
     scrollbar-width: thin;
+    margin: 10px 0px;
 }
 
 .news::-webkit-scrollbar {
@@ -149,7 +149,7 @@
 
 @media (max-width: 550px) {
     .news {
-        margin-top: 2%;
+        row-gap: 15px;
     }
 
     .news::-webkit-scrollbar {
