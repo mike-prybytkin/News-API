@@ -1,0 +1,97 @@
+body {
+    color: #fff;
+    background: #17181c;
+    font-family: sans-serif;
+}
+
+header {
+    padding: 0px 30px;
+}
+
+header h1 {
+    font-size: 40px;
+    font-weight: 800;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    column-gap: 1%;
+    border: 2px solid #30c5ff;
+    border-radius: 10px;
+}
+
+footer {
+    display: flex;
+    height: 60px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer div {
+    margin: 0 2% 0 2%;
+    font-size: 20px;
+    color: #444;
+}
+
+footer span a {
+    color: #444;
+    transition-duration: 0.3s;
+}
+
+footer span a:hover {
+    color: #555;
+}
+  
+.school-logo {
+    height: 40px;
+    transition-duration: 0.3s;
+    filter: invert(24%) sepia(30%) saturate(14%) hue-rotate(351deg) brightness(89%) contrast(86%);
+}
+
+.school-logo:hover {
+    filter: invert(0%) sepia(100%) saturate(7459%) hue-rotate(321deg) brightness(85%) contrast(109%);
+}
+
+footer .copyright {
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+}
+
+footer .copyright a {
+    color: #444;
+    transition-duration: 0.3s;
+}
+
+footer .copyright a:hover {
+    color: #555;
+}
+
+footer .copyright:before {
+    content: '©';
+}
+
+@media (max-width: 550px) {
+    main {
+        flex-direction: column;
+    }
+
+    header {
+        padding: 0px 10px;
+    }
+    
+    header h1 {
+        padding: 0px;
+        margin: 10px 0px;
+        font-size: 40px;
+        font-weight: 800;
+    }
+
+    footer {
+        flex-direction: column;
+        padding: 10px 0px;
+    }
+}
